@@ -16,7 +16,7 @@
                             </li> 
                             <li class="md:block">
                                 <a href="{{ route('dashboard_post') }}" 
-                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" >Blog post</a>
+                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" >My post</a>
                             </li>   
                         </ul>
                     </div>

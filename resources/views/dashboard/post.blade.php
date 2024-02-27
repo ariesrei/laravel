@@ -16,7 +16,7 @@
                     <div class="flex-none md:flex ">
                         <div class="w-full md:w-6/12 py-6">
 
-                            <h1 class="text-3xl font-bold tracking-tight text-gray-900 mb-6">New blog post</h1>
+                            <h1 class="text-3xl font-bold tracking-tight text-gray-900 mb-6">New post</h1>
 
 
                             @if( session('status') )
@@ -60,15 +60,16 @@
                         </div>
                         <div class="w-full md:w-6/12 py-6 px-0 sm:px-6">
 
-                            <h1 class="text-3xl font-bold tracking-tight text-gray-900 mb-6">My blog posts</h1>
+                            <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-6">My posts</h2>
 
                             @if ( $posts->count() ) 
                                 @foreach ($posts as $post)
-                                    <div>{{ $post->title}}</div>
+                                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 mb-6"><a href="{{ route('single_post', $post) }}">{{ $post->title}}</a></h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ $post->body }}</p>
                                 @endforeach
                             @endif
 
-                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                            
                         </div>
                     </div>
                     

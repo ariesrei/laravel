@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::get();
+        $posts = Post::orderBy('id', 'DESC')->get();
         
         return view('posts.index', [
             'posts' => $posts
@@ -33,4 +34,15 @@ class PostController extends Controller
         return back();
     }
 
+    public function singlePost($slug)
+    {
+        $post = Post::where('id', $slug)->first();
+
+        $data = [
+            'title' => $post->title,
+            'body'  => $post->body
+        ];
+
+        return view('posts.single_post', $data);
+    }
 }

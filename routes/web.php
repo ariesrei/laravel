@@ -53,6 +53,7 @@ Route::post('/dashboard', [DashboardController::class, 'store_post'])->name('sto
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts');
+Route::get('/articles', [PostController::class, 'index'])->name('posts');
+Route::get('/articles/{slug}', [PostController::class, 'singlePost'])->name('single_post');
 
 
